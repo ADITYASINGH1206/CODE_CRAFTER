@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #f0f8ff; 
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    background: url("hero-img.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+nav {
+    position: fixed;
+    padding: 25px 60px;
+    z-index: 1;
+}
+
+nav a img {
+    width: 167px;
+}
+
+
+.form-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    padding: 50px;
+    width: 450px;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-wrapper h2 {
+    color: #00509e; 
+    font-size: 2rem;
+}
+
+
+.form-wrapper form {
+    margin: 25px 0 65px;
+}
+
+form .form-control {
+    height: 50px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-control input {
+    height: 100%;
+    width: 100%;
+    background: #e6f0fa; 
+    border: 1px solid #cce0f5;
+    border-radius: 4px;
+    color: #333;
+    font-size: 1rem;
+    padding: 0 20px;
+}
+
+.form-control input:is(:focus, :valid) {
+    background: #d4e6f8;
+    border-color: #00509e;
+    padding: 16px 20px 0;
+}
+
+.form-control label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+    color: #666;
+    transition: all 0.1s ease;
+}
+
+.form-control input:is(:focus, :valid) ~ label {
+    font-size: 0.75rem;
+    transform: translateY(-130%);
+    color: #00509e;
+}
+
+
+form button {
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1rem;
+    background: #00509e; 
+    color: #fff;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #003d73; 
+}
+
+
+.form-wrapper a {
+    text-decoration: none;
+    color: #00509e;
+}
+
+.form-wrapper a:hover {
+    text-decoration: underline;
+}
+
+.form-wrapper :where(label, p, small, a) {
+    color: #666;
+}
+
+form .form-help {
+    display: flex;
+    justify-content: space-between;
+}
+
+form .remember-me {
+    display: flex;
+    align-items: center;
+}
+
+form .remember-me input {
+    margin-right: 5px;
+    accent-color: #00509e;
+}
+
+form .form-help :where(label, a) {
+    font-size: 0.9rem;
+}
+
+.form-wrapper p a {
+    color: #00509e;
+}
+
+.form-wrapper small {
+    display: block;
+    margin-top: 15px;
+}
+
+.form-wrapper small a {
+    color: #0071eb;
+}
+
+
+@media (max-width: 740px) {
+    body::before {
+        display: none;
+    }
+
+    nav,
+    .form-wrapper {
+        padding: 20px;
+    }
+
+    nav a img {
+        width: 140px;
+    }
+
+    .form-wrapper {
+        width: 100%;
+        top: 50%;
+    }
+
+    .form-wrapper form {
+        margin: 25px 0 40px;
+    }
+}
